@@ -1,0 +1,2 @@
+Future:
+    [] find a way to implement storing the failed attempts and not using them once the script is ran again.
