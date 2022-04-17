@@ -18,7 +18,7 @@ def gen() -> int:
                 print(sec_gen)
                 return failed
             except:
-                print("Generatinga non-integer number... Canceling")
+                print("Generated non-integer number... Canceling")
 
         elif input() == "yes" and not dng:
             success = [num]
