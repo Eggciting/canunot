@@ -22,6 +22,7 @@ def gen() -> int:
 
         elif input() == "yes" and not dng:
             success = [num]
+            print("Thank you for using gen-dot-py")
             return success
 
 gen()
