@@ -23,19 +23,19 @@ def gen() -> int:
                     return failed
                 return
             except:
-                connection = sqlite3.connect("/home/phantom/canunot/lib/db.sql")
+                connection = sqlite3.connect("saved.sql")
                 cursor = connection.cursor()
                 cursor.execute(
-                    "CREATE TABLE saved (f int)" 
-                )
+                    "CREATE TABLE saved (f int)")
 
-                cursor.execute(
-                    "INSERT INTO saved(f) VALUES (10)"
-                )
+                for i in failed:
+                    cursor.execute(
+                        "INSERT INTO saved(f) VALUES (%d)" % i)
+
                 connection.commit()
 
                 for saved in cursor.execute("SELECT * FROM saved"):
-                    print("Generated non-integer number... canceling (saved %s)" % saved)
+                    print("Generated non-integer number... canceling (saved %s into database)" % saved)
 
                 cursor.close()
 

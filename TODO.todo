@@ -1,2 +1,9 @@
+Fixes:
+    [] Fix running the script and reinitiating the database.
+    [x] Fix actually saving the item and not some chosen number.
+
+Next:
+    [] Implement smart-rng into shuffle songs from the 'radio'
+
 Future:
-    [] find a way to implement storing the failed attempts and not using them once the script is ran again.
+    [] Find a way to implement storing the failed attempts and not using them once the script is ran again.
