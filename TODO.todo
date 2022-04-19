@@ -1,5 +1,5 @@
 Fixes:
-    [] Fix running the script and reinitiating the database.
+    [x] Fix running the script and reinitiating the database.
     [x] Fix actually saving the item and not some chosen number.
 
 Next:
