@@ -1,7 +1,5 @@
 from inspect import _void
-import math
 import sqlite3
-from sqlite3 import sqlite_version
 from audios.get_songs import read_audio_dir #callback procedure
 
 class DataHandler:
@@ -11,14 +9,14 @@ class DataHandler:
             cursor = connection.cursor()
 
             cursor.execute(
-                "CREATE TABLE save_here(f str)")
+                "CREATE TABLE song_data(meta str)")
 
             cursor.execute(
-                "INSERT INTO save_here VALUES ('this')")
+                "INSERT INTO song_data VALUES ('this')")
 
             connection.commit()
 
-            saved_save = [cursor.execute("SELECT * FROM save_here")]
+            saved_save = [cursor.execute("SELECT * FROM song_data")]
             for i in saved_save:
                 for u in i:
                     to_ret: list = [u, cursor, connection]
@@ -37,9 +35,14 @@ class DataHandler:
             _info = ["data_one" == _info]
             if type(_info) is list:
                 for u in i:
-                    print(u)
+                    for j in _cursor:
+                        print(j) # prints data saved within the _cursor object
+                        _cursor.execute("DELETE * FROM song_data")
+                    _connection.commit()
+                    print(u) # printing 'u' here seems kinda... impractical
+                    return _info
             print("Failed")
             _cursor.close()
             return
 
-DataHandler.reset_data_base()
+DataHandler.get_data()
