@@ -29,8 +29,8 @@ class DataHandler:
     def reset_data_base(self) -> _void:
         data: list = self.get_data()
         for i in data:
-            _info: object = data[0]
-            _cursor: object = data[1]
+            _info: object       = data[0]
+            _cursor: object     = data[1]
             _connection: object = data[2] # sub by 1 instead of 2 to get db contents
             _info = ["data_one" == _info]
             if type(_info) is list:

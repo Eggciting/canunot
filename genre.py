@@ -13,7 +13,7 @@ class genre(Enum):
     def set_genre(self: Enum) -> list:
         results: list = DataHandler.get_data()
         print(results)
-        results[0] == []
+        results[0] = []
         results[0].append(results)
         for i in self:
             choose: int = random.randrange(1, self[i])
